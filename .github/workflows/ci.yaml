@@ -13,11 +13,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Render deploy/
         run: kubectl kustomize deploy > /dev/null
+      - uses: docker/setup-qemu-action@v3      # add, before setup-buildx-action
       - uses: docker/setup-buildx-action@v3
       - name: Build image (not pushed)
         uses: docker/build-push-action@v6
         with:
           context: .
           push: false
+          platforms: linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
