@@ -30,7 +30,7 @@ spec:
           image: app   # replaced via `images:` in kustomization.yaml (set by the release workflow)
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 3000
           # TCP checks work for anything; switch to httpGet on a health path if the app has one.
           readinessProbe:
             tcpSocket:
