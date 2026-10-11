@@ -19,7 +19,8 @@ ENV NODE_ENV=production \
     PORT=3000 \
     NITRO_HOST=0.0.0.0 \
     NITRO_PORT=3000
-COPY --from=builder --chown=node:node /app/.output ./.output
-USER node
+# Numeric IDs (1000 = the image's `node` user) so Kubernetes can verify runAsNonRoot.
+COPY --from=builder --chown=1000:1000 /app/.output ./.output
+USER 1000:1000
 EXPOSE 3000
 CMD ["node", ".output/server/index.mjs"]
