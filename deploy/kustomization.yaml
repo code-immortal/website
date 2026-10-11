@@ -7,4 +7,4 @@ resources:
 images:
   - name: app
     newName: ghcr.io/code-immortal/website
-    newTag: v0.2.0
+    newTag: v0.2.1
