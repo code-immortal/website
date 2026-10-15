@@ -17,7 +17,7 @@ const projects = [
       "A structured database and reference library for biological entities. Browse, search, and explore detailed profiles of organisms with taxonomic classification, habitat data, and ecological relationships.",
     tags: ["Database", "Biology", "Reference"],
     status: "active",
-    href: "#",
+    href: "https://geo.codeimmortal.eu",
   },
 ]
 
